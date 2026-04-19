@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Schere Stein Papier</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; }
+        .choices button { font-size: 30px; margin: 10px; cursor: pointer; }
+        .result-box { margin-top: 30px; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Schere, Stein, Papier</h1>
+
+    <div class="choices">
+        <button id="stein">🪨</button>
+        <button id="schere">✂️</button>
+        <button id="papier">📄</button>
+    </div>
+
+    <div class="result-box">
+        <p>Computer wählte: <span id="computerWahlAnzeige">?</span></p>
+        <h2 id="ergebnisAnzeige">Wähle eins!</h2>
+    </div>
+
+    <p>Punktestand: Spieler <span id="spielerScore">0</span> - <span id="computerScore">0</span> Computer</p>
+
+    <script src="script.js"></script>
+</body>
+</html>

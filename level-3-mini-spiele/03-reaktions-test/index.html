@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Reaktions-Tester</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; }
+        #box {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            margin: 50px auto;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reaktions-Tester</h1>
+    <p>Klicke auf Start. Warte, bis die Box GRÜN wird und klicke dann so schnell du kannst!</p>
+
+    <button id="startButton">Spiel starten</button>
+    <div id="box">Noch nicht bereit...</div>
+    <p id="ergebnis"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

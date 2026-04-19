@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Zahlen raten</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        input { padding: 10px; width: 50px; }
+        button { padding: 10px 20px; }
+        #feedback { font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Zahlen raten (1-100)</h1>
+    <p>Ich habe mir eine Zahl ausgedacht. Kannst du sie erraten?</p>
+
+    <input type="number" id="rateFeld">
+    <button id="rateButton">Raten!</button>
+
+    <p id="feedback"></p>
+    <p>Versuche: <span id="versucheAnzeige">0</span></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
