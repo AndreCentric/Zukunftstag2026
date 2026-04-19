@@ -8,6 +8,8 @@ In diesem Level lernst du, wie ein Computer "denkt". Wir brauchen hier noch kein
 *   Wie der Computer Entscheidungen trifft (**if-Abfragen**).
 *   Wie man mit dem User spricht (`prompt` und `console.log`).
 
+> **Tipp:** Wenn du mal nicht weiterweißt, schau in den [📜 Spickzettel](./cheat-sheet.md)!
+
 ## 🛠 Vorbereitung
 1.  Öffne die Datei `index.html` in diesem Ordner.
 2.  Klicke unten rechts in VS Code auf **Go Live**, um die Seite im Browser zu öffnen.
