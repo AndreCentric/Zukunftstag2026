@@ -1,18 +1,35 @@
-# Musterlösungen (Nur für Mentoren!)
+# Musterlösungen & Betreuer-Guide 🎓
 
-Hier findest du Beispiel-Code für die Aufgaben. Bitte zeige diese Lösungen dem Praktikanten **nicht** direkt, sondern nutze sie, um ihm Hinweise zu geben.
+Hier findest du die vollständigen Lösungen für alle Aufgaben sowie Tipps, wie du den Praktikanten helfen kannst, selbst auf die Lösung zu kommen.
 
-## Level 1: Konsole
+---
 
-### 2. Taschenrechner
+## Level 1: Die Konsole
+
+### 1. Hallo Welt 2.0
+**Lösung:**
 ```javascript
-let zahl1 = Number(prompt("Erste Zahl?"));
-let zahl2 = Number(prompt("Zweite Zahl?"));
+let name = "Alex";
+console.log("Hallo " + name);
+```
+**Mentoren-Tipp:**
+* Wenn der Praktikant vergisst, Anführungszeichen zu setzen: "Was ist der Unterschied zwischen einer Variable (Kiste) und einem Text?"
+* "Wie kann man zwei Texte zusammenkleben?" (Stichwort: `+`)
+
+### 2. Der kleine Taschenrechner
+**Lösung:**
+```javascript
+let zahl1 = Number(prompt("Gib die erste Zahl ein:"));
+let zahl2 = Number(prompt("Gib die zweite Zahl ein:"));
 let ergebnis = zahl1 + zahl2;
 console.log("Das Ergebnis ist: " + ergebnis);
 ```
+**Mentoren-Tipp:**
+* Oft kommt bei `prompt` das Ergebnis "105" statt 15 raus. "Warum denkt der Computer, dass 10 und 5 nur hintereinander geschrieben werden sollen? Was macht `Number()`?"
+* Erkläre, dass `prompt` immer "Text-Pakete" liefert und wir diese erst in "Zahlen" umwandeln müssen.
 
-### 3. Türsteher
+### 3. Der Türsteher
+**Lösung:**
 ```javascript
 let alter = Number(prompt("Wie alt bist du?"));
 if (alter >= 18) {
@@ -21,85 +38,63 @@ if (alter >= 18) {
     console.log("Leider zu jung.");
 }
 ```
+**Mentoren-Tipp:**
+* Frage: "Was passiert, wenn du genau 18 bist? Welches Zeichen brauchen wir, damit 18 auch noch zählt?"
+* Hilf beim Verständnis der geschweiften Klammern: "Alles was zwischen `{ }` steht, passiert nur, wenn die Bedingung wahr ist."
 
 ---
 
 ## Level 2: Interaktion
 
 ### 1. Klick-Zähler
-```javascript
-let zaehler = 0;
-let btn = document.getElementById("zaehlButton");
-let anzeige = document.getElementById("anzeige");
+**Mentoren-Tipp:**
+* Viele vergessen, die Variable `zaehler` außerhalb der Funktion zu deklarieren. Wenn sie innerhalb ist, wird sie bei jedem Klick wieder auf 0 gesetzt.
+* Frage: "Wo muss die Kiste stehen, damit der Computer sich den alten Wert merkt?"
 
-btn.addEventListener("click", function() {
-    zaehler = zaehler + 1;
-    anzeige.innerText = zaehler;
-});
-```
+### 2. Farb-Wechsler
+**Mentoren-Tipp:**
+* "Wie können wir prüfen, welche Farbe gerade da ist?" -> `if (body.style.backgroundColor === "...")`.
+* Erinnere an das doppelte oder dreifache Gleichheitszeichen für Vergleiche.
+
+### 3. Namens-Begrüßer
+**Mentoren-Tipp:**
+* "Wie kommen wir an den Inhalt eines Input-Feldes?" -> `.value`.
+* "Was ist der Unterschied zwischen `.innerText` (für den Absatz) und `.value` (für das Eingabefeld)?"
 
 ---
 
-## Level 3: Spiele
+## Level 3: Mini-Spiele
 
-### 1. Zahlen raten (Logik-Kern)
+### 1. Zahlen raten
+**Lösung (Logik):**
 ```javascript
-let geheimzahl = Math.floor(Math.random() * 100) + 1;
-let versuche = 0;
-
-document.getElementById("rateButton").addEventListener("click", function() {
-    let tipp = Number(document.getElementById("rateFeld").value);
-    versuche++;
-    document.getElementById("versucheAnzeige").innerText = versuche;
-
-    let feedback = document.getElementById("feedback");
-    if (tipp === geheimzahl) {
-        feedback.innerText = "Gewonnen! Die Zahl war " + geheimzahl;
-    } else if (tipp < geheimzahl) {
-        feedback.innerText = "Zu niedrig!";
-    } else {
-        feedback.innerText = "Zu hoch!";
-    }
-});
-```
-
-### 2. Schere, Stein, Papier (Logik-Kern)
-```javascript
-function holeComputerWahl() {
-    let r = Math.floor(Math.random() * 3); // 0, 1 oder 2
-    if (r === 0) return "Stein";
-    if (r === 1) return "Schere";
-    return "Papier";
-}
-
-function spiele(spielerWahl) {
-    let computerWahl = holeComputerWahl();
-    // ... Vergleichs-Logik mit if/else
+if (tipp === geheimzahl) {
+    feedback.innerText = "Gewonnen!";
+} else if (tipp < geheimzahl) {
+    feedback.innerText = "Zu niedrig!";
+} else {
+    feedback.innerText = "Zu hoch!";
 }
 ```
+**Mentoren-Tipp:**
+* Wenn der Praktikant feststeckt: "Lass uns die Logik erst in Worten aufschreiben (Pseudocode). Wenn die Zahl kleiner ist als die Geheimzahl, dann..."
+* "Nutze `console.log(geheimzahl)`, um beim Testen zu schummeln!"
 
-### 3. Reaktions-Tester (Logik-Kern)
-```javascript
-let startZeit;
-let box = document.getElementById("box");
+### 2. Schere, Stein, Papier
+**Mentoren-Tipp:**
+* Das Schwierigste ist der Vergleich. Hilf dabei, die Möglichkeiten zu strukturieren.
+* "Wann gewinnt der Spieler? Lass uns alle drei Fälle aufschreiben und mit `||` (oder) verknüpfen."
+* "Wie verwandeln wir eine Zufallszahl (0, 1, 2) in die Wörter 'Stein', 'Schere', 'Papier'?"
 
-document.getElementById("startButton").addEventListener("click", function() {
-    box.style.backgroundColor = "red";
-    box.innerText = "Warten...";
-    let verzögerung = Math.random() * 3000 + 2000; // 2-5 Sek
+### 3. Reaktions-Tester
+**Mentoren-Tipp:**
+* Das Konzept von `setTimeout` ist oft neu. "Der erste Teil ist die Aufgabe, der zweite Teil ist die Wartezeit in Millisekunden."
+* "Wie berechnet man eine Zeitdauer? (Endzeit minus Startzeit)".
+* "Warum brauchen wir `Date.now()`?"
 
-    setTimeout(function() {
-        box.style.backgroundColor = "green";
-        box.innerText = "JETZT KLICKEN!";
-        startZeit = Date.now();
-    }, verzögerung);
-});
+---
 
-box.addEventListener("click", function() {
-    if (box.style.backgroundColor === "green") {
-        let dauer = Date.now() - startZeit;
-        document.getElementById("ergebnis").innerText = "Deine Zeit: " + dauer + "ms";
-        box.style.backgroundColor = "red";
-    }
-});
-```
+## Allgemeine Coaching-Tipps
+1. **Nicht vorsagen!** Stelle Gegenfragen: "Was sagt die Fehlermeldung in der Konsole?", "Was hast du bisher versucht?", "Was müsste in dieser Variable stehen?"
+2. **Kleine Schritte:** Wenn eine Aufgabe zu groß wirkt, zerlege sie. "Lass uns erst mal nur den Button in JS finden, bevor wir die Logik schreiben."
+3. **Erfolge feiern:** Wenn der Counter das erste Mal zählt -> "High Five! Du hast gerade das DOM manipuliert!"
