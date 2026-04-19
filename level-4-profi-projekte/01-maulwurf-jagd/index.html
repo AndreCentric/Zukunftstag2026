@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Maulwurf-Jagd</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; background-color: #f0f0f0; }
+        .spielfeld {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .loch {
+            width: 150px;
+            height: 150px;
+            background-color: #8b4513; /* Braun wie Erde */
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            border: 5px solid #5d2e0a;
+        }
+        .maulwurf {
+            width: 100px;
+            height: 100px;
+            background-color: #444;
+            border-radius: 50% 50% 20% 20%;
+            position: absolute;
+            left: 25px;
+            top: 150px; /* Am Anfang unten versteckt */
+            transition: top 0.2s;
+            cursor: pointer;
+        }
+        /* Diese Klasse lässt den Maulwurf auftauchen */
+        .maulwurf.hoch {
+            top: 30px;
+        }
+        .maulwurf::after {
+            content: "👀";
+            font-size: 30px;
+            position: absolute;
+            top: 10px;
+            left: 30px;
+        }
+        h1 { color: #2e7d32; }
+        .score-board { font-size: 24px; margin: 20px; }
+        button { padding: 10px 20px; font-size: 18px; cursor: pointer; background-color: #2e7d32; color: white; border: none; border-radius: 5px; }
+        button:hover { background-color: #1b5e20; }
+    </style>
+</head>
+<body>
+    <h1>Maulwurf-Jagd 🔨</h1>
+    <div class="score-board">Punkte: <span id="score">0</span> | Zeit: <span id="zeit">30</span>s</div>
+    <button id="startBtn">Spiel starten!</button>
+
+    <div class="spielfeld">
+        <div class="loch"><div class="maulwurf"></div></div>
+        <div class="loch"><div class="maulwurf"></div></div>
+        <div class="loch"><div class="maulwurf"></div></div>
+        <div class="loch"><div class="maulwurf"></div></div>
+        <div class="loch"><div class="maulwurf"></div></div>
+        <div class="loch"><div class="maulwurf"></div></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
