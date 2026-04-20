@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Code-Clicker</title>
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background-color: #1e1e1e; color: #d4d4d4; text-align: center; padding: 50px; }
+        #clicker-container { margin-bottom: 50px; }
+        #main-btn {
+            font-size: 80px;
+            background: none;
+            border: 2px solid #007acc;
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 20px;
+            transition: transform 0.1s;
+        }
+        #main-btn:active { transform: scale(0.95); }
+        .stats { font-size: 24px; margin: 20px; color: #4ec9b0; }
+        .shop {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .upgrade-card {
+            background-color: #252526;
+            border: 1px solid #444;
+            padding: 20px;
+            width: 200px;
+            border-radius: 8px;
+        }
+        button.buy-btn {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button.buy-btn:disabled { background-color: #555; cursor: not-allowed; }
+        h1 { color: #007acc; }
+    </style>
+</head>
+<body>
+    <h1>💻 Code-Clicker</h1>
+    <div class="stats">Code-Zeilen: <span id="zeilen">0</span></div>
+    <div class="stats" style="font-size: 18px;">Zeilen pro Sekunde: <span id="zps">0</span></div>
+
+    <div id="clicker-container">
+        <button id="main-btn">⌨️</button>
+        <p>Klicke auf die Tastatur!</p>
+    </div>
+
+    <h2>Upgrade-Shop</h2>
+    <div class="shop">
+        <div class="upgrade-card">
+            <h3>☕ Kaffee</h3>
+            <p>+1 pro Klick</p>
+            <p>Kosten: <span id="kosten-kaffee">10</span></p>
+            <button class="buy-btn" id="buy-kaffee">Kaufen</button>
+        </div>
+        <div class="upgrade-card">
+            <h3>👶 Praktikant</h3>
+            <p>+1 pro Sekunde</p>
+            <p>Kosten: <span id="kosten-praktikant">50</span></p>
+            <button class="buy-btn" id="buy-praktikant">Kaufen</button>
+        </div>
+        <div class="upgrade-card">
+            <h3>🤖 KI-Bot</h3>
+            <p>+10 pro Sekunde</p>
+            <p>Kosten: <span id="kosten-ki">200</span></p>
+            <button class="buy-btn" id="buy-ki">Kaufen</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

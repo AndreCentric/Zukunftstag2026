@@ -29,6 +29,9 @@ Gehe die Level nacheinander durch. In jedem Ordner findest du eine `README.md` D
     *   **Projekt 1:** Zahlen raten (Werden die Tipps heißer oder kälter?).
     *   **Projekt 2:** Schere, Stein, Papier (Du gegen den Computer).
     *   **Projekt 3:** Reaktions-Tester (Wie schnell bist du wirklich?).
+5.  **[Level 4: Profi-Projekte](./level-4-profi-projekte/README.md)**
+    *   **Projekt 1:** Maulwurf-Jagd (Schnelligkeit ist alles).
+    *   **Projekt 2:** Code-Clicker (Vom Praktikant zum CTO).
 
 ---
 

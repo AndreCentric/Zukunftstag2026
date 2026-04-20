@@ -63,6 +63,7 @@ document.getElementById("rateButton").addEventListener("click", function() {
 });
 ```
 
+---
 ### 2. Schere, Stein, Papier (Logik-Kern)
 ```javascript
 function holeComputerWahl() {
@@ -102,4 +103,56 @@ box.addEventListener("click", function() {
         box.style.backgroundColor = "red";
     }
 });
+```
+
+---
+
+## Level 4: Profi-Projekte
+
+### 1. Maulwurf-Jagd (Logik-Kern)
+```javascript
+const maulwuerfe = document.querySelectorAll('.maulwurf');
+let score = 0;
+let zeit = 30;
+
+function zeigeMaulwurf() {
+    const loch = Math.floor(Math.random() * maulwuerfe.length);
+    const maulwurf = maulwuerfe[loch];
+    maulwurf.classList.add('hoch');
+
+    setTimeout(() => {
+        maulwurf.classList.remove('hoch');
+    }, 800);
+}
+
+maulwuerfe.forEach(m => m.addEventListener('click', () => {
+    if (m.classList.contains('hoch')) {
+        score++;
+        document.getElementById('score').innerText = score;
+        m.classList.remove('hoch');
+    }
+}));
+```
+
+### 2. Code-Clicker (Logik-Kern)
+```javascript
+let zeilen = 0;
+let zps = 0;
+
+function tick() {
+    zeilen += zps;
+    document.getElementById('zeilen').innerText = Math.floor(zeilen);
+}
+
+setInterval(tick, 1000);
+
+function kaufeUpgrade(kosten, bonus) {
+    if (zeilen >= kosten) {
+        zeilen -= kosten;
+        zps += bonus;
+        // Kosten für nächstes Mal erhöhen
+        return true;
+    }
+    return false;
+}
 ```
