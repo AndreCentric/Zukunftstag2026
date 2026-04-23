@@ -2,6 +2,8 @@
 
 Bevor wir loslegen, müssen wir sicherstellen, dass alles bereit ist.
 
+#Hallo Oscar
+
 ## 1. VS Code einrichten
 Öffne diesen Ordner in VS Code.
 
